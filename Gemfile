@@ -20,6 +20,8 @@ gem "cssbundling-rails"
 gem "tailwindcss-rails", "~> 4.4"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+# 認証機能
+gem "devise"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"

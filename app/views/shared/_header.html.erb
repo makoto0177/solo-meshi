@@ -1,0 +1,12 @@
+<header class="navbar bg-base-100 shadow-lg">
+  <div class="flex-1">
+    <%= link_to "Solo Meshi", root_path, class: "btn btn-ghost text-xl" %>
+  </div>
+  <div class="flex-none">
+    <% if user_signed_in? %>
+      <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-ghost" %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-ghost" %>
+    <% end %>
+  </div>
+</header>

@@ -1,7 +1,16 @@
-<!-- Tailwind CSSのユーティリティクラス -->
-<div class="bg-blue-500 text-white p-4 rounded-lg">
-  Tailwind CSSのテスト
+<div class="hero min-h-screen bg-base-200">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Solo Meshi</h1>
+      <p class="py-6">一人でも気軽に楽しめるお店を見つけよう</p>
+      <% if user_signed_in? %>
+        <p class="text-lg">ようこそ、<%= current_user.name %> さん</p>
+      <% else %>
+        <div class="space-x-2">
+          <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %>
+          <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<!-- DaisyUIのコンポーネント -->
-<button class="btn btn-primary">Hello daisyUI!</button>
