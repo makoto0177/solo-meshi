@@ -1,9 +1,5 @@
 class Shop < ApplicationRecord
   has_many :posts, dependent: :destroy
-  
-  validates :name, presence: true, length: { minimum: 1, maximum: 100 }
-  validates :area, presence: true, length: { minimum: 1, maximum: 50 }
-  validates :category, presence: true, inclusion: { in: CATEGORIES }
 
   CATEGORIES = [
     '和食',
@@ -22,4 +18,8 @@ class Shop < ApplicationRecord
     'ファストフード',
     'その他'
   ].freeze
+
+  validates :name, presence: true, length: { minimum: 1, maximum: 100 }
+  validates :area, presence: true, length: { minimum: 1, maximum: 50 }
+  validates :category, presence: true, inclusion: { in: CATEGORIES }
 end

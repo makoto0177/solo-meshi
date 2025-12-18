@@ -2,40 +2,6 @@ class Post < ApplicationRecord
   belongs_to :shop
   belongs_to :user
 
-  validates :visited_at, presence: true
-  
-  validates :rating, 
-            presence: true, 
-            numericality: { 
-              greater_than_or_equal_to: 1.0, 
-              less_than_or_equal_to: 5.0 
-            },
-            inclusion: { in: RATINGS }
-  
-  validates :solo_customer_level, 
-            presence: true, 
-            inclusion: { in: SOLO_CUSTOMER_LEVELS }
-  
-  validates :casual_level, 
-            presence: true, 
-            inclusion: { in: CASUAL_LEVELS }
-  
-  validates :noise_level, 
-            presence: true, 
-            inclusion: { in: NOISE_LEVELS }
-  
-  validates :counter_seat, 
-            presence: true, 
-            inclusion: { in: COUNTER_SEATS }
-  
-  validates :crowdedness_level, 
-            presence: true, 
-            inclusion: { in: CROWDEDNESS_LEVELS }
-  
-  validates :comment, 
-            length: { maximum: 1000 }, 
-            allow_blank: true
-  
   RATINGS = [
     1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0
   ].freeze
@@ -69,4 +35,38 @@ class Post < ApplicationRecord
     '普通',
     '混んでいた'
   ].freeze
+
+  validates :visited_at, presence: true
+
+  validates :rating,
+            presence: true,
+            numericality: {
+              greater_than_or_equal_to: 1.0,
+              less_than_or_equal_to: 5.0
+            },
+            inclusion: { in: RATINGS }
+
+  validates :solo_customer_level,
+            presence: true,
+            inclusion: { in: SOLO_CUSTOMER_LEVELS }
+
+  validates :casual_level,
+            presence: true,
+            inclusion: { in: CASUAL_LEVELS }
+
+  validates :noise_level,
+            presence: true,
+            inclusion: { in: NOISE_LEVELS }
+
+  validates :counter_seat,
+            presence: true,
+            inclusion: { in: COUNTER_SEATS }
+
+  validates :crowdedness_level,
+            presence: true,
+            inclusion: { in: CROWDEDNESS_LEVELS }
+
+  validates :comment,
+            length: { maximum: 1000 },
+            allow_blank: true
 end
