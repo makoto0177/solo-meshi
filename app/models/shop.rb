@@ -19,7 +19,7 @@ class Shop < ApplicationRecord
     'その他'
   ].freeze
 
-  validates :name, presence: true, length: { minimum: 1, maximum: 100 }
-  validates :area, presence: true, length: { minimum: 1, maximum: 50 }
+  validates :name, presence: true, length: { maximum: 100 }, uniqueness: { scope: :area, case_sensitive: false }
+  validates :area, presence: true, length: { maximum: 50 }
   validates :category, presence: true, inclusion: { in: CATEGORIES }
 end

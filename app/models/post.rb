@@ -40,10 +40,6 @@ class Post < ApplicationRecord
 
   validates :rating,
             presence: true,
-            numericality: {
-              greater_than_or_equal_to: 1.0,
-              less_than_or_equal_to: 5.0
-            },
             inclusion: { in: RATINGS }
 
   validates :solo_customer_level,
