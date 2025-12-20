@@ -7,33 +7,33 @@ class Post < ApplicationRecord
   ].freeze
 
   SOLO_CUSTOMER_LEVELS = [
-    '一人客が多い',
-    '一人客とグループ客が混在',
-    '一人客が少ない'
+    "一人客が多い",
+    "一人客とグループ客が混在",
+    "一人客が少ない"
   ].freeze
 
   CASUAL_LEVELS = [
-    'カジュアル',
-    '普通',
-    'フォーマル'
+    "カジュアル",
+    "普通",
+    "フォーマル"
   ].freeze
 
   NOISE_LEVELS = [
-    '静か',
-    '普通',
-    'にぎやか'
+    "静か",
+    "普通",
+    "にぎやか"
   ].freeze
 
   COUNTER_SEATS = [
-    'あり',
-    'なし',
-    '不明'
+    "あり",
+    "なし",
+    "不明"
   ].freeze
 
   CROWDEDNESS_LEVELS = [
-    '空いていた',
-    '普通',
-    '混んでいた'
+    "空いていた",
+    "普通",
+    "混んでいた"
   ].freeze
 
   validates :visited_at, presence: true
