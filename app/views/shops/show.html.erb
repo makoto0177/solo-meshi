@@ -1,0 +1,30 @@
+<div class="container mx-auto px-4 py-6 max-w-5xl">
+  <!-- 戻るリンク -->
+  <div class="mb-6">
+    <%= link_to "← 店舗一覧に戻る", shops_path, class: "btn btn-sm btn-ghost" %>
+  </div>
+
+  <!-- 店舗情報 -->
+  <div class="card bg-white shadow-lg">
+    <div class="card-body">
+      <h1 class="text-3xl font-bold mb-4"><%= @shop.name %></h1>
+
+      <div class="space-y-2 text-gray-700">
+        <div class="flex items-center gap-2">
+          <span class="font-semibold">エリア:</span>
+          <%= @shop.area %>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="font-semibold">カテゴリー:</span>
+          <%= @shop.category %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- レビューセクション -->
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">レビュー</h2>
+  </div>
+</div>
