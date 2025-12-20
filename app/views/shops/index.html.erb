@@ -1,0 +1,33 @@
+<div class="container mx-auto px-4 py-6 max-w-5xl">
+  <!-- 新規投稿ボタン -->
+  <div class="mb-6 text-right">
+    <a href="#" class="btn btn-warning btn-sm">
+      <span class="text-lg">+</span> 新しいお店を投稿
+    </a>
+  </div>
+
+  <!-- 店舗一覧 -->
+  <% if @shops.any? %>
+    <div class="space-y-4">
+      <% @shops.each do |shop| %>
+        <div class="card bg-white shadow">
+          <div class="card-body">
+            <h3 class="card-title"><%= shop.name %></h3>
+
+            <div class="text-sm text-gray-600">
+              <%= shop.area %> / <%= shop.category %>
+            </div>
+
+            <div class="card-actions justify-end mt-4">
+              <%= link_to "詳細", shop_path(shop), class: "btn btn-sm btn-success" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="text-center py-16">
+      <p class="text-gray-500">店舗が登録されていません</p>
+    </div>
+  <% end %>
+</div>
