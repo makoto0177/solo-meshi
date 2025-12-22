@@ -1,4 +1,5 @@
 shops_data = [
+  { name: "仮店舗", area: "未設定", category: "その他" },
   { name: "一人焼肉 渋谷店", area: "渋谷", category: "焼肉・焼鳥" },
   { name: "ラーメン太郎", area: "新宿", category: "ラーメン" },
   { name: "カフェ・ド・ソロ", area: "表参道", category: "カフェ" },
