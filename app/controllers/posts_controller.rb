@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :authorize_post!, only: [:edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -16,7 +18,33 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to root_path, notice: "投稿を更新しました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to root_path, notice: "投稿を削除しました"
+  end
+
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def authorize_post!
+    return if @post.user_id == current_user.id
+
+    redirect_to root_path, alert: "権限がありません"
+  end
 
   def post_params
     params.require(:post).permit(
