@@ -1,0 +1,50 @@
+<div class="max-w-3xl mx-auto p-6 space-y-6">
+  <div class="flex items-center justify-between">
+    <h1 class="text-2xl font-bold">投稿詳細</h1>
+    <%# <%= link_to "店舗詳細へ戻る", shop_path(@post.shop), class: "btn btn-sm btn-ghost" %> %>
+  </div>
+
+  <div class="card bg-white shadow">
+    <div class="card-body space-y-3">
+      <div>
+        <div class="text-sm text-gray-500">訪問日</div>
+        <div class="font-medium"><%= l @post.visited_at, format: :long %></div>
+      </div>
+      <div>
+        <div class="text-sm text-gray-500">評価</div>
+        <div class="font-medium"><%= @post.rating %></div>
+      </div>
+      <div>
+        <div class="text-sm text-gray-500">一人客の多さ</div>
+        <div class="font-medium"><%= @post.solo_customer_level %></div>
+      </div>
+      <div>
+        <div class="text-sm text-gray-500">カジュアル度</div>
+        <div class="font-medium"><%= @post.casual_level %></div>
+      </div>
+      <div>
+        <div class="text-sm text-gray-500">静かさ</div>
+        <div class="font-medium"><%= @post.noise_level %></div>
+      </div>
+      <div>
+        <div class="text-sm text-gray-500">カウンター席</div>
+        <div class="font-medium"><%= @post.counter_seat %></div>
+      </div>
+      <div>
+        <div class="text-sm text-gray-500">混雑度</div>
+        <div class="font-medium"><%= @post.crowdedness_level %></div>
+      </div>
+      <div>
+        <div class="text-sm text-gray-500">コメント</div>
+        <div class="font-medium"><%= @post.comment.presence || "コメントなし" %></div>
+      </div>
+    </div>
+  </div>
+
+  <% if @post.user_id == current_user.id %>
+    <div class="flex items-center gap-3">
+      <%= link_to "編集する", edit_post_path(@post), class: "btn btn-primary" %>
+      <%= button_to "削除する", post_path(@post), method: :delete, class: "btn btn-outline", data: { turbo_confirm: "この投稿を削除しますか？" } %>
+    </div>
+  <% end %>
+</div>
