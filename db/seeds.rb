@@ -15,3 +15,16 @@ shops_data = [
 shops_data.each do |shop_data|
   Shop.create!(shop_data)
 end
+
+users = [
+  { name: "テスト太郎", email: "test@example.com" },
+  { name: "テスト花子", email: "hanako@example.com" },
+  { name: "テスト次郎", email: "jiro@example.com" }
+]
+
+users.each do |user|
+  User.find_or_create_by!(email: user[:email]) do |record|
+    record.name = user[:name]
+    record.password = "password"
+  end
+end
