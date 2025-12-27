@@ -22,4 +22,13 @@ class Shop < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }, uniqueness: { scope: :area, case_sensitive: false }
   validates :area, presence: true, length: { maximum: 50 }
   validates :category, presence: true, inclusion: { in: CATEGORIES }
+
+  def average_rating
+    return 0 if posts.empty?
+    (posts.average(:rating).to_f * 2).round / 2.0
+  end
+
+  def reviews_count
+    posts.count
+  end
 end

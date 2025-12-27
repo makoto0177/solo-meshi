@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @posts = @shop.posts.includes(:user).order(created_at: :desc)
   end
 
   def new
