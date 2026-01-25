@@ -1,0 +1,23 @@
+ja:
+  devise:
+    views:
+      labels:
+        name: "ユーザー名"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
+      placeholders:
+        name: "ユーザー名を入力"
+        email: "メールアドレスを入力"
+        password: "パスワードを入力"
+        password_confirmation: "パスワードを再入力"
+      password_minimum_length: "%{count}文字以上"
+      registrations:
+        new:
+          title: "新規登録"
+          submit: "登録する"
+          login: "ログイン"
+      sessions:
+        title: "ログイン"
+        submit: "ログイン"
+        sign_up: "新規登録"
