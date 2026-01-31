@@ -22,6 +22,9 @@ gem "tailwindcss-rails", "~> 4.4"
 gem "jbuilder"
 # 認証機能
 gem "devise"
+# 国際化対応
+gem "rails-i18n"
+gem "devise-i18n"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"

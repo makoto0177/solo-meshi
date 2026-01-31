@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      post: レビュー
+      shop: 店舗
+    attributes:
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認）
+        current_password: 現在のパスワード
+      post:
+        shop: 店舗
+        user: ユーザー
+        visited_at: 訪問日
+        rating: 評価
+        solo_customer_level: 一人客の多さ
+        casual_level: カジュアルさ
+        noise_level: 店内の音量
+        counter_seat: カウンター席
+        crowdedness_level: 混雑度
+        comment: コメント
+      shop:
+        name: 店舗名
+        area: エリア
+        category: カテゴリー
